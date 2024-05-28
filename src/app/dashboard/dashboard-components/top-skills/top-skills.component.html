@@ -1,0 +1,34 @@
+<mat-card *ngIf="TopSkillsChartOptions">
+  <mat-card-content>
+    <mat-card-title>Top Skills</mat-card-title>
+    <div class="piechart">
+      <div *ngIf="TopSkillsChartOptions">
+        <apx-chart
+          class="chart-container"
+          [series]="TopSkillsChartOptions.series"
+          [chart]="TopSkillsChartOptions.chart"
+          [labels]="TopSkillsChartOptions.labels"
+          [responsive]="TopSkillsChartOptions.responsive"
+          [tooltip]="TopSkillsChartOptions.tooltip"
+          [legend]="TopSkillsChartOptions.legend"
+          [colors]="TopSkillsChartOptions.colors"
+          [dataLabels]="TopSkillsChartOptions.dataLabels"
+          [plotOptions]="TopSkillsChartOptions.plotOptions"
+          [stroke]="TopSkillsChartOptions.stroke"
+        >
+        </apx-chart>
+      </div>
+    </div>
+  </mat-card-content>
+  <hr />
+  <mat-card-content>
+    <ul class="list-inline text-center">
+      <li *ngFor="let skill of topSkillsData; let i = index">
+        <h6 [ngStyle]="{ color: TopSkillsChartOptions.colors[i] }" class="m-0">
+          <i class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i
+          >{{ skill.skill }}
+        </h6>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>

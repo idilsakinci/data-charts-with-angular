@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-content>
+    <div class="d-flex flex-wrap">
+      <div>
+        <mat-card-title>Skills in Development</mat-card-title>
+      </div>
+      <div class="ml-auto">
+        <ul class="list-inline">
+          <li>
+            <h6 class="text-success m-0">
+              <i class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>Total Employees: {{ totalEmployees }}
+            </h6>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <div *ngIf="chartOptions">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [dataLabels]="chartOptions.dataLabels"
+          [plotOptions]="chartOptions.plotOptions"
+          [yaxis]="chartOptions.yaxis"
+          [xaxis]="chartOptions.xaxis"
+          [fill]="chartOptions.fill"
+          [tooltip]="chartOptions.tooltip"
+          [stroke]="chartOptions.stroke"
+          [legend]="chartOptions.legend"
+          [grid]="chartOptions.grid">
+        </apx-chart>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
