@@ -35,6 +35,7 @@ export interface TopSkillsChartOptions {
   templateUrl: './top-skills.component.html',
   styleUrls: ['./top-skills.component.scss']
 })
+
 export class TopSkillsComponent {
   @ViewChild('top-skills-chart') chart2: ChartComponent = Object.create(null);
   public TopSkillsChartOptions: Partial<TopSkillsChartOptions> | null = null;
@@ -46,7 +47,7 @@ export class TopSkillsComponent {
     this.dataService.getDashboardData().subscribe((data: any) => {
       if (data) {
         this.topSkillsData = data.data.top_skills;
-        console.log(this.topSkillsData);
+        console.log("Top Skills:", this.topSkillsData);
         this.createChartOptionsTopSkills();
       }
     });
@@ -61,8 +62,8 @@ export class TopSkillsComponent {
       chart: {
         type: 'donut',
         fontFamily: 'Poppins,sans-serif',
-        width: 223,
-        height: 223,
+        width: 224,
+        height: 224,
         alignments: {
           horizontal: 'center',
           vertical: 'middle'

@@ -1,0 +1,81 @@
+<mat-card>
+  <mat-card-content>
+    <div class="d-flex flex-wrap">
+      <div>
+        <mat-card-title style="margin-bottom: -10px">Courses</mat-card-title>
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-tab-group mat-stretch-tabs="false">
+    <mat-tab label="In Progress Courses">
+      <mat-card-content>
+        <div
+          class="d-flex no-block"
+          style="position: relative"
+          *ngFor="let inProgressCourse of inProgressCourses; let i = index"
+        >
+          <div class="m-r-20">
+            <img
+              class="img-circle"
+              [src]="inProgressCourse.image"
+              alt="Image"
+            />
+          </div>
+          <div class="p-b-20 b-b m-b-30">
+            <h4 class="m-0">
+              {{ inProgressCourse.title }}
+              <small class="text-muted"
+                >(Assigned to: {{ inProgressCourse.assigned_to }})</small
+              >
+            </h4>
+            <p class="text">{{ inProgressCourse.description }}</p>
+            <p class="text">{{ inProgressCourse.due_date }}</p>
+          </div>
+          <h6
+            class="text-success m-0"
+            style="position: absolute; right: 0; top: 0; color: green"
+          >
+            <i class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>
+            {{ inProgressCourse.status }}
+          </h6>
+        </div>
+      </mat-card-content>
+    </mat-tab>
+
+    <mat-tab label="Upcoming courses">
+      <mat-card-content>
+        <div
+          class="d-flex no-block"
+          style="position: relative"
+          *ngFor="let upcomingCourse of upcomingCourses; let i = index"
+        >
+          <div class="m-r-20">
+            <img class="img-circle" [src]="upcomingCourse.image" alt="Image" />
+          </div>
+          <div class="p-b-20 b-b m-b-30">
+            <h4 class="m-0">
+              {{ upcomingCourse.title }}
+              <small class="text-muted"
+                >(Assigned to: {{ upcomingCourse.assigned_to }})</small
+              >
+            </h4>
+            <p class="text">{{ upcomingCourse.description }}</p>
+            <p class="text">{{ upcomingCourse.due_date }}</p>
+          </div>
+          <h6
+            class="text-success m-0"
+            style="position: absolute; right: 0; top: 0; color: orange"
+          >
+            <i class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>
+            {{ upcomingCourse.status }}
+          </h6>
+        </div>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+
+  <mat-card-content>
+    <h6 class="m-0">Total Completed Courses: {{totalCompletedCourses}}</h6>
+  </mat-card-content>
+</mat-card>

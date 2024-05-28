@@ -49,11 +49,10 @@ export class SkillsInDevelopmentComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getDashboardData().subscribe((data: any) => {
-      console.log(data);
       if (data) {
         this.totalEmployees = data.data.total_employees;
         this.skillsData = data.data.skills_in_development;
-        console.log(this.skillsData);
+        console.log("Skills:", this.skillsData);
         this.createChartOptions();
       }
     });
