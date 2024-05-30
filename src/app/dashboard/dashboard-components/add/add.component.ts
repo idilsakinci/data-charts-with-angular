@@ -15,7 +15,7 @@ import { DataService } from 'src/app/service/data.service';
 import { MatStepper } from '@angular/material/stepper';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'app-add',
   standalone: true,
   imports: [DemoMaterialModule, FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './add.component.html',

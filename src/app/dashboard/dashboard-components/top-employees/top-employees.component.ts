@@ -9,6 +9,7 @@ import { DataService } from 'src/app/service/data.service';
   standalone: true,
   imports: [DemoMaterialModule, CommonModule, NgCircleProgressModule],
   templateUrl: './top-employees.component.html',
+  styleUrls: ['./top-employees.component.scss'],
   providers: [
     {
       provide: CircleProgressOptions,
