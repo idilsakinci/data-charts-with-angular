@@ -30,6 +30,7 @@ import { MatStepper } from '@angular/material/stepper';
 export class AddComponent implements OnInit {
   @ViewChild('steppervarient') steppervarient!: MatStepper;
   public skills: { name: string; control: FormControl }[] = [];
+  public teams: any;
 
   showTeamCard: boolean = true;
   showEmployeeCard: boolean = false;
@@ -41,6 +42,7 @@ export class AddComponent implements OnInit {
   fourthFormGroup: FormGroup = Object.create(null);
   fifthFormGroup: FormGroup = Object.create(null);
   sixthFormGroup: FormGroup = Object.create(null);
+  seventhFormGroup: FormGroup = Object.create(null);
 
   isLinearvarient = false;
   varientfirstFormGroup: FormGroup = Object.create(null);
@@ -49,6 +51,7 @@ export class AddComponent implements OnInit {
   varientfourthFormGroup: FormGroup = Object.create(null);
   varientfifthFormGroup: FormGroup = Object.create(null);
   varientsixthFormGroup: FormGroup = Object.create(null);
+  varientseventhFormGroup: FormGroup = Object.create(null);
 
   isLinearposition = false;
   positionfirstFormGroup: FormGroup = Object.create(null);
@@ -57,6 +60,7 @@ export class AddComponent implements OnInit {
   positionfourthFormGroup: FormGroup = Object.create(null);
   positionfifthFormGroup: FormGroup = Object.create(null);
   positionsixthFormGroup: FormGroup = Object.create(null);
+  positionseventhFormGroup: FormGroup = Object.create(null);
 
   optionalfirstFormGroup: FormGroup = Object.create(null);
   optionalsecondFormGroup: FormGroup = Object.create(null);
@@ -64,6 +68,7 @@ export class AddComponent implements OnInit {
   optionalfourthFormGroup: FormGroup = Object.create(null);
   optionalfifthFormGroup: FormGroup = Object.create(null);
   optionalsixthFormGroup: FormGroup = Object.create(null);
+  optionalseventhFormGroup: FormGroup = Object.create(null);
   isOptional = false;
 
   editablefirstFormGroup: FormGroup = Object.create(null);
@@ -72,6 +77,7 @@ export class AddComponent implements OnInit {
   editablefourthFormGroup: FormGroup = Object.create(null);
   editablefifthFormGroup: FormGroup = Object.create(null);
   editablesixthFormGroup: FormGroup = Object.create(null);
+  editableseventhFormGroup: FormGroup = Object.create(null);
   isEditable = false;
 
   customizefirstFormGroup: FormGroup = Object.create(null);
@@ -80,6 +86,7 @@ export class AddComponent implements OnInit {
   customizefourthFormGroup: FormGroup = Object.create(null);
   customizefifthFormGroup: FormGroup = Object.create(null);
   customizesixthFormGroup: FormGroup = Object.create(null);
+  customizeseventhFormGroup: FormGroup = Object.create(null);
 
   errorfirstFormGroup: FormGroup = Object.create(null);
   errorsecondFormGroup: FormGroup = Object.create(null);
@@ -87,6 +94,7 @@ export class AddComponent implements OnInit {
   errorfourthFormGroup: FormGroup = Object.create(null);
   errorfifthFormGroup: FormGroup = Object.create(null);
   errorsixthFormGroup: FormGroup = Object.create(null);
+  errorseventhFormGroup: FormGroup = Object.create(null);
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -102,6 +110,7 @@ export class AddComponent implements OnInit {
             control: this._formBuilder.control(false), // Default olarak tüm checkbox'lar işaretli olmayacak
           };
         });
+        this.teams= data.data.teams;
       }
     });
 
@@ -123,6 +132,9 @@ export class AddComponent implements OnInit {
     this.sixthFormGroup = this._formBuilder.group({
       sixthCtrl: ['', Validators.required],
     });
+    this.seventhFormGroup = this._formBuilder.group({
+      seventhCtrl: ['', Validators.required],
+    });
 
     // varient
     this.varientfirstFormGroup = this._formBuilder.group({
@@ -142,6 +154,9 @@ export class AddComponent implements OnInit {
     });
     this.varientsixthFormGroup = this._formBuilder.group({
       varientsixthCtrl: ['', Validators.required],
+    });
+    this.varientseventhFormGroup = this._formBuilder.group({
+      varientseventhCtrl: ['', Validators.required],
     });
 
     // position
@@ -163,6 +178,9 @@ export class AddComponent implements OnInit {
     this.positionsixthFormGroup = this._formBuilder.group({
       positionsixthCtrl: ['', Validators.required],
     });
+    this.positionseventhFormGroup = this._formBuilder.group({
+      positionseventhCtrl: ['', Validators.required],
+    });
 
     // optional
     this.optionalfirstFormGroup = this._formBuilder.group({
@@ -182,6 +200,9 @@ export class AddComponent implements OnInit {
     });
     this.optionalsixthFormGroup = this._formBuilder.group({
       optionalsixthCtrl: ['', Validators.required],
+    });
+    this.optionalseventhFormGroup = this._formBuilder.group({
+      optionalseventhCtrl: ['', Validators.required],
     });
 
     // editable
@@ -203,6 +224,9 @@ export class AddComponent implements OnInit {
     this.editablesixthFormGroup = this._formBuilder.group({
       editablesixthCtrl: ['', Validators.required],
     });
+    this.editableseventhFormGroup = this._formBuilder.group({
+      editableseventhCtrl: ['', Validators.required],
+    });
 
     // customize
     this.customizefirstFormGroup = this._formBuilder.group({
@@ -223,6 +247,9 @@ export class AddComponent implements OnInit {
     this.customizesixthFormGroup = this._formBuilder.group({
       customizesixthCtrl: ['', Validators.required],
     });
+    this.customizeseventhFormGroup = this._formBuilder.group({
+      customizeseventhCtrl: ['', Validators.required],
+    });
 
     // error
     this.errorfirstFormGroup = this._formBuilder.group({
@@ -242,6 +269,9 @@ export class AddComponent implements OnInit {
     });
     this.errorsixthFormGroup = this._formBuilder.group({
       errorsixthCtrl: ['', Validators.required],
+    });
+    this.errorseventhFormGroup = this._formBuilder.group({
+      errorseventhCtrl: ['', Validators.required],
     });
   }
 

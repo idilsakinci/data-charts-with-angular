@@ -244,7 +244,7 @@
           </mat-step>
 
           <mat-step [stepControl]="varientsixthFormGroup">
-            <ng-template matStepLabel>Choose Skills</ng-template>
+            <ng-template matStepLabel>Choose skills</ng-template>
             <div *ngFor="let skill of skills">
               <mat-checkbox [formControl]="skill.control">
                 {{ skill.name }}
@@ -259,6 +259,27 @@
               </button>
             </div>
           </mat-step>
+
+          <mat-step [stepControl]="varientseventhFormGroup">
+            <form [formGroup]="varientseventhFormGroup">
+              <ng-template matStepLabel>Select team</ng-template>
+              <mat-form-field>
+                <mat-label>Select team</mat-label>
+                <select matNativeControl formControlName="varientseventhCtrl" required>
+                  <option *ngFor="let team of teams" [value]="team.title">{{ team.title }}</option>
+                </select>
+              </mat-form-field>
+              <div class="button-row">
+                <button mat-raised-button color="primary" matStepperPrevious>
+                  Back
+                </button>
+                <button mat-raised-button color="accent" matStepperNext>
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+
 
           <mat-step>
             <ng-template matStepLabel>Done</ng-template>
