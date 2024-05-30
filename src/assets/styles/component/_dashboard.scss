@@ -40,35 +40,19 @@ Rounds
         white-space: normal;
       }
       .user-img {
-        width: 45px;
+        width: 50px;
         position: relative;
         display: inline-block;
         margin-right: 10px;
         img {
           width: 100%;
         }
-        .profile-status {
-          border: 2px solid $white;
-          border-radius: 50%;
-          display: inline-block;
-          height: 10px;
-          left: 33px;
-          position: absolute;
-          top: -1px;
-          width: 10px;
-        }
-        .online {
-          background: $success;
-        }
-        .busy {
-          background: $danger;
-        }
-        .away {
-          background: $warning;
-        }
-        .offline {
-          background: $warning;
-        }
+      }
+      .user-score {
+        width: 40px;
+        position: relative;
+        display: inline-block;
+        margin-right: 10px;
       }
       .mail-contnet {
         display: inline-block;

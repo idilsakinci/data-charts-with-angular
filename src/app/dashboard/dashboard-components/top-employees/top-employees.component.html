@@ -1,0 +1,47 @@
+<mat-card>
+  <div class="p-20 bg-danger position-relative">
+    <h4 class="card-title text-white m-0">Top Employees</h4>
+    <h6 class="card-subtitle text-white m-0 op-5" style="font-size: 12px;">
+      Checkout scores of top employees here
+    </h6>
+  </div>
+  <div class="message-box contact-box p-20">
+    <div class="message-widget contact-widget">
+      <a href="#" *ngFor="let employee of topEmployees">
+        <div class="user-img">
+          <img [src]="employee.image" alt="user" class="img-circle" />
+        </div>
+        <div class="mail-contnet">
+          <h5>{{ employee.name }}</h5>
+          <span class="mail-desc">{{ employee.title }}</span>
+          <span class="mail-desc">{{ employee.email }}</span>
+        </div>
+        <div class="user-score">
+          <circle-progress
+            [percent]="(employee.current_score / 5 ) * 100"
+            [radius]="14"
+            [space]="-6"
+            [outerStrokeWidth]="6"
+            [outerStrokeGradient]="true"
+            [innerStrokeWidth]="6"
+            [outerStrokeColor]="'#4882c2'"
+            [innerStrokeColor]="'#e7e8ea'"
+            [outerStrokeGradientStopColor]="'#53a9ff'"
+            [animationDuration]="300"
+            [showTitle]="true"
+            [showUnits]="false"
+            [showSubtitle]="false"
+            [showInnerStroke]="true"
+            [renderOnClick]="false"
+            [title]="employee.current_score.toString()"
+            [titleFontSize]="(12).toString()"
+            [titleFontWeight]="(500).toString()"
+          >
+          </circle-progress>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  
+</mat-card>
