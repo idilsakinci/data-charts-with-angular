@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-content>
+    <div class="d-flex flex-wrap">
+      <div>
+        <mat-card-title>Activity Hours</mat-card-title>
+      </div>
+    </div>
+
+    <div>
+      <div *ngIf="chartOptions">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [plotOptions]="chartOptions.plotOptions"
+          [xaxis]="chartOptions.xaxis"
+          [yaxis]="chartOptions.yaxis"
+          [fill]="chartOptions.fill"
+          [tooltip]="chartOptions.tooltip"
+          [stroke]="chartOptions.stroke"
+          [dataLabels]="chartOptions.dataLabels"
+          [legend]="chartOptions.legend"
+          [grid]="chartOptions.grid">
+        </apx-chart>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
