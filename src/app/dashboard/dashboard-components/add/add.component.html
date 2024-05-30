@@ -1,0 +1,279 @@
+<div class="row">
+  <div class="col-12">
+    <mat-card>
+      <div class="button-group">
+        <button mat-raised-button color="primary" (click)="addTeam()">
+          Add Team
+        </button>
+        <button mat-raised-button color="primary" (click)="addEmployee()">
+          Add Employee
+        </button>
+      </div>
+
+      <mat-card-content *ngIf="showTeamCard">
+        <mat-card-title>Add New Team</mat-card-title>
+
+        <mat-vertical-stepper
+          [linear]="isLinearvarient"
+          #steppervarient
+          class="m-t-20"
+        >
+          <mat-step [stepControl]="varientfirstFormGroup">
+            <form [formGroup]="varientfirstFormGroup">
+              <ng-template matStepLabel>Fill out team name</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Team Name"
+                  formControlName="varientfirstCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-raised-button matStepperNext color="accent">
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="varientsecondFormGroup">
+            <form [formGroup]="varientsecondFormGroup">
+              <ng-template matStepLabel>Fill out description</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Description"
+                  formControlName="varientsecondCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div class="button-row">
+                <button mat-raised-button color="primary" matStepperPrevious>
+                  Back
+                </button>
+                <button mat-raised-button color="accent" matStepperNext>
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="varientthirdFormGroup">
+            <form [formGroup]="varientthirdFormGroup">
+              <ng-template matStepLabel
+                >Fill out your overall score</ng-template
+              >
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Overall score"
+                  formControlName="varientthirdCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div class="button-row">
+                <button mat-raised-button color="primary" matStepperPrevious>
+                  Back
+                </button>
+                <button mat-raised-button color="accent" matStepperNext>
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="varientfourthFormGroup">
+            <form [formGroup]="varientfourthFormGroup">
+              <ng-template matStepLabel
+                >Fill out total employee count</ng-template
+              >
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Total employee count"
+                  formControlName="varientfourthCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div class="button-row">
+                <button mat-raised-button color="primary" matStepperPrevious>
+                  Back
+                </button>
+                <button mat-raised-button color="accent" matStepperNext>
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done.
+            <div class="button-row">
+              <button mat-raised-button color="primary" matStepperPrevious>
+                Back
+              </button>
+              <button
+                mat-raised-button
+                color="warn"
+                (click)="steppervarient.reset()"
+              >
+                Reset
+              </button>
+            </div>
+          </mat-step>
+        </mat-vertical-stepper>
+      </mat-card-content>
+
+      <mat-card-content *ngIf="showEmployeeCard">
+        <mat-card-title>Add New Employee</mat-card-title>
+
+        <mat-vertical-stepper
+          [linear]="isLinearvarient"
+          #steppervarient
+          class="m-t-20"
+        >
+          <mat-step [stepControl]="varientfirstFormGroup">
+            <form [formGroup]="varientfirstFormGroup">
+              <ng-template matStepLabel>Fill out name and surname</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Name and Surname"
+                  formControlName="varientfirstCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-raised-button matStepperNext color="accent">
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="varientsecondFormGroup">
+            <form [formGroup]="varientsecondFormGroup">
+              <ng-template matStepLabel>Fill out e-mail</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="E-mail"
+                  formControlName="varientsecondCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div class="button-row">
+                <button mat-raised-button color="primary" matStepperPrevious>
+                  Back
+                </button>
+                <button mat-raised-button color="accent" matStepperNext>
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="varientthirdFormGroup">
+            <form [formGroup]="varientthirdFormGroup">
+              <ng-template matStepLabel>Fill out title</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Title"
+                  formControlName="varientthirdCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div class="button-row">
+                <button mat-raised-button color="primary" matStepperPrevious>
+                  Back
+                </button>
+                <button mat-raised-button color="accent" matStepperNext>
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="varientfourthFormGroup">
+            <form [formGroup]="varientfourthFormGroup">
+              <ng-template matStepLabel
+                >Fill out total current score</ng-template
+              >
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Current Score"
+                  formControlName="varientfourthCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div class="button-row">
+                <button mat-raised-button color="primary" matStepperPrevious>
+                  Back
+                </button>
+                <button mat-raised-button color="accent" matStepperNext>
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="varientfifthFormGroup">
+            <form [formGroup]="varientfifthFormGroup">
+              <ng-template matStepLabel>Fill out lessons taken</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Lessons Taken"
+                  formControlName="varientfifthCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div class="button-row">
+                <button mat-raised-button color="primary" matStepperPrevious>
+                  Back
+                </button>
+                <button mat-raised-button color="accent" matStepperNext>
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="varientsixthFormGroup">
+            <ng-template matStepLabel>Choose Skills</ng-template>
+            <div *ngFor="let skill of skills">
+              <mat-checkbox [formControl]="skill.control">
+                {{ skill.name }}
+              </mat-checkbox>
+            </div>
+            <div class="button-row">
+              <button mat-raised-button color="primary" matStepperPrevious>
+                Back
+              </button>
+              <button mat-raised-button color="accent" matStepperNext>
+                Next
+              </button>
+            </div>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done.
+            <div class="button-row">
+              <button mat-raised-button color="primary" matStepperPrevious>
+                Back
+              </button>
+              <button mat-raised-button color="warn" (click)="resetStepper()">
+                Reset
+              </button>
+            </div>
+          </mat-step>
+        </mat-vertical-stepper>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

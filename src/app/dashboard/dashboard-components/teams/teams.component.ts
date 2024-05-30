@@ -36,5 +36,4 @@ export class TeamsComponent implements OnInit{
     });
   }
 
-  createTeamsTable(): void {}
 }

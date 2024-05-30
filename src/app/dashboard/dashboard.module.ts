@@ -12,5 +12,7 @@ import { DashboardRoutes } from './dashboard.routing';
     RouterModule.forChild(DashboardRoutes),
     DashboardComponent,
   ],
+  declarations: [
+  ],
 })
 export class DashboardModule { }

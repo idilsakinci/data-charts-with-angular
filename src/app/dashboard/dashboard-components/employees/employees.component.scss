@@ -1,0 +1,58 @@
+::ng-deep .mat-select-panel {
+  background-color: transparent !important;
+  backdrop-filter: blur(10px); /* Optional: adds a blur effect */
+}
+
+::ng-deep .mat-select-trigger {
+  background: transparent !important;
+}
+
+.team-select {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.employee-list {
+  flex: 1;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.skills-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.skills-list li {
+  line-height: 1.5; 
+}
+
+.mat-header-cell,
+.mat-cell {
+  flex: 1;
+}
+
+
