@@ -38,6 +38,7 @@ import { DataService } from 'src/app/service/data.service';
 export class TopEmployeesComponent implements OnInit {
 
   public topEmployees: any;
+  public averageEmployeeScore: any;
 
   constructor(private dataService: DataService) {
   }
@@ -45,6 +46,7 @@ export class TopEmployeesComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getDashboardData().subscribe((data: any) => {
       if (data) {
+        this.averageEmployeeScore=data.data.average_employee_score;
         let imageCounter = 1;
         this.topEmployees = data.data.top_employees.map(
           (employee: any) => {

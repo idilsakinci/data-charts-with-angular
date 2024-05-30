@@ -1,9 +1,34 @@
 <mat-card>
-  <div class="p-20 bg-danger position-relative">
-    <h4 class="card-title text-white m-0">Top Employees</h4>
-    <h6 class="card-subtitle text-white m-0 op-5" style="font-size: 12px;">
-      Checkout scores of top employees here
-    </h6>
+  <div class="p-20 bg-danger position-relative d-flex flex-wrap">
+    <div>
+      <h4 class="card-title text-white m-0">Top Employees</h4>
+      <h6 class="card-subtitle text-white m-0 op-5" style="font-size: 12px">
+        Checkout scores of top employees here
+      </h6>
+    </div>
+    <div class="user-score ml-auto">
+      <circle-progress
+        [percent]="(averageEmployeeScore / 5) * 100"
+        [radius]="16"
+        [space]="-7"
+        [outerStrokeWidth]="7"
+        [outerStrokeGradient]="true"
+        [innerStrokeWidth]="7"
+        [outerStrokeColor]="'#4882c2'"
+        [innerStrokeColor]="'#e7e8ea'"
+        [outerStrokeGradientStopColor]="'#53a9ff'"
+        [animationDuration]="300"
+        [showTitle]="true"
+        [showUnits]="false"
+        [showSubtitle]="false"
+        [showInnerStroke]="true"
+        [renderOnClick]="false"
+        [title]="averageEmployeeScore"
+        [titleFontSize]="(12).toString()"
+        [titleFontWeight]="(500).toString()"
+      >
+      </circle-progress>
+    </div>
   </div>
   <div class="message-box contact-box p-20">
     <div class="message-widget contact-widget">
@@ -18,7 +43,7 @@
         </div>
         <div class="user-score">
           <circle-progress
-            [percent]="(employee.current_score / 5 ) * 100"
+            [percent]="(employee.current_score / 5) * 100"
             [radius]="14"
             [space]="-6"
             [outerStrokeWidth]="6"
@@ -42,6 +67,4 @@
       </a>
     </div>
   </div>
-
-  
 </mat-card>
