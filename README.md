@@ -90,6 +90,10 @@ Column and line charts are used together in the Activity hours field. The number
 
 <img width="467" alt="image" src="https://github.com/idilsakinci/data-charts-with-angular/assets/76444215/64a0ff6c-ab0b-4ce7-a5d5-e6b0cada6eed">
 
+#### All content
+
+![general](https://github.com/idilsakinci/data-charts-with-angular/assets/76444215/3acf6c1e-3a10-4a1c-b3ae-930ba1d61e1e)
+
 
 
 
