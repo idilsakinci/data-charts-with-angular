@@ -1,5 +1,7 @@
 # Dashboard with data graphs and tables
 
+## You can access the project from this link: https://data-charts-tables.netlify.app/
+
 This project was created with Angular CLI and MaterialProAngularLite template was used.
 
 <img width="959" alt="Ekran görüntüsü 2024-06-01 233306" src="https://github.com/idilsakinci/data-charts-with-angular/assets/76444215/8f650d67-73ac-4ac8-bcc9-7284b12a765d">
