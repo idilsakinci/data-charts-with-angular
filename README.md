@@ -33,6 +33,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 #### Data Service
 
+The API url containing the data is introduced in the service section and is ready to be used in components.
+
 #### Teams
 
 In the Teams area, the name, description, overall score and number of employees of each team are presented to the user in a tabular form. There is a selection in this field that allows 5, 10 and 20 data representations per page.
@@ -52,5 +54,18 @@ The data of all employees, including their names, e-mail addresses, positions, s
 #### Courses
 
 The courses section is divided into two. Courses under the in progress tag are displayed on dahsboard by default. When you click on the upcoming courses text in the title of the section, the page scrolls and information about the upcoming courses is displayed. At this stage, photographic information about the courses, which was not included in the data, was added to the project.
+
+#### Skills in Development
+
+Skills in development were created with the help of a column chart. Here, for each skill, it is shown how many employees have developed in this skill.
+
+#### Top Skills
+
+Top skills evaluated with pie chart, and the chart was created with percentages according to the number of employees.
+
+#### Activity Hours
+
+Column and line charts are used together in the Activity hours field. The number of courses taken according to dates is shown with a column chart, and the hours are shown with a line chart.
+
 
 
