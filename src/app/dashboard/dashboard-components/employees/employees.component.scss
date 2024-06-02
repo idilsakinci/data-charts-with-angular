@@ -47,12 +47,41 @@
 }
 
 .skills-list li {
-  line-height: 1.5; 
+  line-height: 1.5;
 }
 
 .mat-header-cell,
 .mat-cell {
   flex: 1;
 }
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+  th.mat-header-cell, td.mat-cell {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  th.mat-header-cell {
+    white-space: nowrap;
+  }
+
+  .wide-column {
+    min-width: 150px;
+  }
+
+  .narrow-column {
+    min-width: 100px;
+  }
+
+  .skills-list {
+    padding-left: 20px;
+    margin: 0;
+  }
+}
+
 
 

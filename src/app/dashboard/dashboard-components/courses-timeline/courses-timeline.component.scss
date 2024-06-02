@@ -6,3 +6,35 @@
   object-fit: cover;
   border-radius: 50%;
 }
+
+.course-container {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.course-status {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: green;
+}
+
+@media (max-width: 600px) {
+  .course-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .course-details {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .course-status {
+    position: static;
+    align-self: flex-end;
+    margin-top: 10px; 
+    color: green;
+  }
+}

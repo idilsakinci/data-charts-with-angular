@@ -35,7 +35,6 @@ export interface TopSkillsChartOptions {
   templateUrl: './top-skills.component.html',
   styleUrls: ['./top-skills.component.scss']
 })
-
 export class TopSkillsComponent {
   @ViewChild('top-skills-chart') chart2: ChartComponent = Object.create(null);
   public TopSkillsChartOptions: Partial<TopSkillsChartOptions> | null = null;
@@ -62,17 +61,13 @@ export class TopSkillsComponent {
       chart: {
         type: 'donut',
         fontFamily: 'Poppins,sans-serif',
-        width: 224,
-        height: 224,
-        alignments: {
-          horizontal: 'center',
-          vertical: 'middle'
-        }
+        width: '100%', // genişlik ve yükseklik değerlerini otomatik hale getirdik
+        height: '100%',
       },
       plotOptions: {
         pie: {
           donut: {
-            size: '80px',
+            size: '80%',
           },
         },
       },
@@ -95,7 +90,15 @@ export class TopSkillsComponent {
           breakpoint: 767,
           options: {
             chart: {
-              width: 150,
+              width: '100%', 
+              height: '100%',
+            },
+            plotOptions: {
+              pie: {
+                donut: {
+                  size: '60%',
+                },
+              },
             },
           },
         },
